@@ -1,0 +1,7 @@
+.eventListing__card {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: left;
+    margin-bottom: 32px;
+}
