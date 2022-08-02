@@ -2,7 +2,7 @@
 import './App.css';
 import {useState, useEffect } from 'react';
 import axios from 'axios';
-import SearchInput from './components/SearchInput/SearchInput';
+import Search from './components/Search/Search';
 
 function App() {
   const [events, setEvents] = useState([]);
@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="eventListing">
       <div className="eventListing__container">
-        <SearchInput events={events} />
+        <Search events={events} />
       </div>
     </div>
   );

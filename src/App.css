@@ -1,5 +1,9 @@
+body {
+  background: #F6F6F6;
+}
+
 .eventListing__container {
-  max-width: 992px;
+  max-width: 1190px;
   margin: 0 auto;
   padding: 100px 30px 100px 30px;
 }

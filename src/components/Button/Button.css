@@ -1,0 +1,17 @@
+.eventListing__button {
+    display: block;
+    background-color: #4A93E5;
+    padding: 15px;
+    width: auto;
+    color: white;
+    text-decoration: none;
+    transition: all .3s;
+    height: 100%;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.eventListing__button:hover {
+    background-color: #4A45E5;
+}

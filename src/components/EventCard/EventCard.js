@@ -1,5 +1,7 @@
 import React from 'react'
-import HTMLReactParser from 'html-react-parser';
+import HTMLReactParser from 'html-react-parser'
+import Button from '../Button/Button'
+import './EventCard.css';
 
 export default function EventCard({event}) {
     const parse = HTMLReactParser;
@@ -26,23 +28,28 @@ export default function EventCard({event}) {
 
             lastEventDate = `${lastDay} ${lastMonth} ${lastDate} ${lastYear}`;
         }
-        console.log(event.images.small);
-        if(event.images.medium !== '') {
+
+        if(event.images.small !== '') {
             eventImage = event.images.small;
+        } else if(event.images.original !== '') {
+            eventImage = event.images.original;
         } else {
             eventImage = null;
         }
     }
   return (
-    <li key={event.id}>
-        <article className="eventListing__card" key={event.id}>
+    <li key={event.id} className='eventListing__card'>
+        <article>
+            <div className="eventListing__image-wrapper">
+                {eventImage && <img className='eventListing__image' src={eventImage} alt='' contentType='text/html' />}
+            </div>
             <div className="eventListing__card-content">
-                <div className="eventListing__image-wrapper">
-                    {eventImage && <img className='eventListing__image' src={eventImage} alt='' contentType='text/html' />}
+                <div className="eventListing__card-content-top">
+                    <h2 className="eventListing__card-title">{event.title}</h2>
+                    <p className="eventListing__card-date">{firstEventDate && firstEventDate} {lastEventDate !== firstEventDate && ' - ' + lastEventDate}</p> 
+                    {event.short_description !== '' && <p>{parse(event.short_description)}</p>}
                 </div>
-                <h2 className="eventListing__card-title">{event.title}</h2>
-                <p className="eventListing__card-date">{firstEventDate && firstEventDate} {lastEventDate !== firstEventDate && ' - ' + lastEventDate}</p> 
-                {event.short_description !== '' && <p>{parse(event.short_description)}</p>} 
+                <Button text='Book now' link='#' />
             </div>
         </article>
     </li>

@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
-import EventCard from '../EventCard/EventCard';
+import EventCard from '../EventCard/EventCard'
+import './Search.css'
 
-export default function SearchInput({events}) {    
+export default function Search({events}) {    
     const [q, setQ] = useState("");
     const [searchParam] = useState(["title"]);
 
@@ -27,7 +28,7 @@ export default function SearchInput({events}) {
                     name="search-form"
                     id="search-form"
                     className="eventListing__search-input"
-                    placeholder="Search for..."
+                    placeholder="Search for an event"
                     value={q}
                     onChange={(e) => setQ(e.target.value)}
                 />
