@@ -1,8 +1,11 @@
 import React from 'react'
+import HTMLReactParser from 'html-react-parser';
 
 export default function EventCard({event}) {
+    const parse = HTMLReactParser;
     let firstEventDate = '';
     let lastEventDate = '';
+    let eventImage = '';
     {
         if(event.first_date !== '') {
             const d = new Date(event.first_date);
@@ -23,13 +26,23 @@ export default function EventCard({event}) {
 
             lastEventDate = `${lastDay} ${lastMonth} ${lastDate} ${lastYear}`;
         }
+        console.log(event.images.small);
+        if(event.images.medium !== '') {
+            eventImage = event.images.small;
+        } else {
+            eventImage = null;
+        }
     }
   return (
     <li key={event.id}>
-        <article className="card" key={event.id}>
-            <div className="card-content">
-                <h2 className="card-name">{event.title}</h2>
-                <p>{firstEventDate && firstEventDate} {lastEventDate != firstEventDate && ' - ' + lastEventDate}</p>  
+        <article className="eventListing__card" key={event.id}>
+            <div className="eventListing__card-content">
+                <div className="eventListing__image-wrapper">
+                    {eventImage && <img className='eventListing__image' src={eventImage} alt='' contentType='text/html' />}
+                </div>
+                <h2 className="eventListing__card-title">{event.title}</h2>
+                <p className="eventListing__card-date">{firstEventDate && firstEventDate} {lastEventDate !== firstEventDate && ' - ' + lastEventDate}</p> 
+                {event.short_description !== '' && <p>{parse(event.short_description)}</p>} 
             </div>
         </article>
     </li>
