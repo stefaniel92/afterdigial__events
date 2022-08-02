@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import EventCard from '../EventCard/EventCard';
 
 export default function SearchInput({events}) {    
     const [q, setQ] = useState("");
@@ -18,32 +19,26 @@ export default function SearchInput({events}) {
     }
 
     return (
-        <div className="wrapper">
-                    <div className="search-wrapper">
-                        <label htmlFor="search-form">
-                            <input
-                                type="search"
-                                name="search-form"
-                                id="search-form"
-                                className="search-input"
-                                placeholder="Search for..."
-                                value={q}
-                                onChange={(e) => setQ(e.target.value)}
-                            />
-                        </label>
-                    </div>
-                    <ul className="card-grid">
-                    {search(events).map((event) => (
-                            <li key={event.id}>
-                                <article className="card" key={event.id}>
-                                    <div className="card-content">
-                                      <h2 className="card-name">{event.title}</h2>  
-                                    </div>
-                                </article>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+        <>
+        <div className="eventListing__search-wrapper">
+            <label htmlFor="search-form">
+                <input
+                    type="search"
+                    name="search-form"
+                    id="search-form"
+                    className="eventListing__search-input"
+                    placeholder="Search for..."
+                    value={q}
+                    onChange={(e) => setQ(e.target.value)}
+                />
+            </label>
+        </div>
+        <ul className="eventListing__card-grid">
+            {search(events).map((event) => (
+                <EventCard event={event} key={event.id} />
+            ))}
+        </ul>
+        </>
     )
 }
    

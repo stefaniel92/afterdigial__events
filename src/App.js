@@ -2,7 +2,6 @@
 import './App.css';
 import {useState, useEffect } from 'react';
 import axios from 'axios';
-import EventList from './components/EventList/EventList';
 import SearchInput from './components/SearchInput/SearchInput';
 
 function App() {
@@ -26,7 +25,6 @@ function App() {
     <div className="eventListing">
       <div className="eventListing__container">
         <SearchInput events={events} />
-        {/* <EventList  events={events}/> */}
       </div>
     </div>
   );
