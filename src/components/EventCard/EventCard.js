@@ -29,9 +29,7 @@ export default function EventCard({event}) {
             lastEventDate = `${lastDay} ${lastMonth} ${lastDate} ${lastYear}`;
         }
 
-        if(event.images.small !== '') {
-            eventImage = event.images.small;
-        } else if(event.images.original !== '') {
+      if(event.images.original !== '') {
             eventImage = event.images.original;
         } else {
             eventImage = null;
@@ -41,13 +39,13 @@ export default function EventCard({event}) {
     <li key={event.id} className='eventListing__card'>
         <article>
             <div className="eventListing__image-wrapper">
-                {eventImage && <img className='eventListing__image' src={eventImage} alt='' contentType='text/html' />}
+                {eventImage && <img className='eventListing__image' src={eventImage} alt=''  />}
             </div>
             <div className="eventListing__card-content">
                 <div className="eventListing__card-content-top">
                     <h3 className="eventListing__card-title">{event.title}</h3>
                     <p className="eventListing__card-date">{firstEventDate && firstEventDate} {lastEventDate !== firstEventDate && ' - ' + lastEventDate}</p> 
-                    {event.short_description !== '' && <p className="eventListing__card-description">{parse(event.short_description)}</p>}
+                    {event.short_description !== '' && <div className="eventListing__card-description">{parse(event.short_description)}</div>}
                 </div>
                 <Button text='Book now' link='#' />
             </div>

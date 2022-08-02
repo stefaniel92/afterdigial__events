@@ -21,24 +21,24 @@ export default function Search({events}) {
 
     return (
         <>
-        <div className="eventListing__search-wrapper">
-            <label htmlFor="search-form">
-                <input
-                    type="search"
-                    name="search-form"
-                    id="search-form"
-                    className="eventListing__search-input"
-                    placeholder="Search for an event"
-                    value={q}
-                    onChange={(e) => setQ(e.target.value)}
-                />
-            </label>
-        </div>
-        <ul className="eventListing__card-grid">
-            {search(events).map((event) => (
-                <EventCard event={event} key={event.id} />
-            ))}
-        </ul>
+            <div className="eventListing__search-wrapper">
+                <label htmlFor="search-form">
+                    <input
+                        type="search"
+                        name="search-form"
+                        id="search-form"
+                        className="eventListing__search-input"
+                        placeholder="Search for an event"
+                        value={q}
+                        onChange={(e) => setQ(e.target.value)}
+                    />
+                </label>
+            </div>
+            <ul className="eventListing__card-grid">
+                {search(events).map((event) => (
+                    <EventCard event={event} key={event.id} />
+                ))}
+            </ul>
         </>
     )
 }

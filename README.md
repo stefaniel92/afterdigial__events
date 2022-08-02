@@ -68,3 +68,32 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+### Stefanie's Notes
+I made this in React because I have some experience with it, but no experience with Vue.
+
+# Problems I encountered:
+I got a CORS error when trying to access the data from the API. I did some googling and tried to set up a proxy server to avoid the issue. Because I don't have any experience with Node I couldn't get it to work, and as I had alreasy spent a lot of time on it I decided to move on and build the rest of the app. So as a development solution I installed this Chrome extension: https://mybrowseraddon.com/access-control-allow-origin.html
+
+Unfortunately this means I wasn't able to see the application in any other browser and you will probably have to also install the extenstion to see the app, so my apologies for that.
+
+# Time spent
+I didn't track it exactly but I probably spent about 4 hours working on this not including the time spent trying to fix the CORS error.
+
+# What I would do differently
+I would split out the components more neatly in the Search component to have one component for the search wrapper/input and another for the grid instead of having it all together.
+
+I also would add more thorough checks when fetching the data from the API
+
+As mentioned above I would need to find a permanent solution for the CORS error. I also would need to make sure it's cross-browser compatible. 
+
+I would also like to add an autocomplete to the search and make it more thorough.
+
+Styling wise, I would like to spend more time on making sure the Book Now button is always aligned to the bottom of the card.
+
+# Maintainability of code
+I haven't installed many extra dependencies and everything is split out into separate components (although it could be more thorough). I think the naming conventions make sense and that the code is easy to read.
+
+
