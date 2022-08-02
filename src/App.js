@@ -2,7 +2,8 @@
 import './App.css';
 import {useState, useEffect } from 'react';
 import axios from 'axios';
-import Search from './components/Search/Search';
+import Search from './components/Search/Search'
+import Banner from './components/Banner/Banner'
 
 function App() {
   const [events, setEvents] = useState([]);
@@ -23,7 +24,9 @@ function App() {
 
   return (
     <div className="eventListing">
+      <Banner />
       <div className="eventListing__container">
+        <h2>Search events</h2>
         <Search events={events} />
       </div>
     </div>

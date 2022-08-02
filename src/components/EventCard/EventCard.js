@@ -45,7 +45,7 @@ export default function EventCard({event}) {
             </div>
             <div className="eventListing__card-content">
                 <div className="eventListing__card-content-top">
-                    <h2 className="eventListing__card-title">{event.title}</h2>
+                    <h3 className="eventListing__card-title">{event.title}</h3>
                     <p className="eventListing__card-date">{firstEventDate && firstEventDate} {lastEventDate !== firstEventDate && ' - ' + lastEventDate}</p> 
                     {event.short_description !== '' && <p>{parse(event.short_description)}</p>}
                 </div>

@@ -1,0 +1,14 @@
+.eventListings__banner {
+    background-color: white;
+    padding: 30px;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    right: 0;
+    left: 0;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, .1);
+}
+
+.eventListings__banner img {
+    max-width: 230px;
+}
