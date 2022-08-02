@@ -47,7 +47,7 @@ export default function EventCard({event}) {
                 <div className="eventListing__card-content-top">
                     <h3 className="eventListing__card-title">{event.title}</h3>
                     <p className="eventListing__card-date">{firstEventDate && firstEventDate} {lastEventDate !== firstEventDate && ' - ' + lastEventDate}</p> 
-                    {event.short_description !== '' && <p>{parse(event.short_description)}</p>}
+                    {event.short_description !== '' && <p className="eventListing__card-description">{parse(event.short_description)}</p>}
                 </div>
                 <Button text='Book now' link='#' />
             </div>

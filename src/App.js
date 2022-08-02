@@ -3,11 +3,11 @@ import './App.css';
 import {useState, useEffect } from 'react';
 import axios from 'axios';
 import Search from './components/Search/Search'
-import Banner from './components/Banner/Banner'
+import Header from './components/Header/Header'
 
 function App() {
   const [events, setEvents] = useState([]);
-  const [currentPageUrl, setCurrentPageUrl] = useState('https://t-bridge.s3.eu-west-1.amazonaws.com/events.json')
+  const currentPageUrl = 'https://t-bridge.s3.eu-west-1.amazonaws.com/events.json';
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="eventListing">
-      <Banner />
+      <Header />
       <div className="eventListing__container">
         <h2>Search events</h2>
         <Search events={events} />

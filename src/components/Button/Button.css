@@ -9,7 +9,7 @@
     height: 100%;
     border-radius: 5px;
     text-align: center;
-    margin-top: auto;
+    font-weight: bold;
 }
 
 .eventListing__button:hover {

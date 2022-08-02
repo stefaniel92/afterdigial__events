@@ -22,6 +22,11 @@
 
 .eventListing__card-date {
     font-size: .9rem;
+    font-weight: bold;
+}
+
+.eventListing__card-description {
+    color: #696B6C;
 }
 
 .eventListing__image-wrapper {

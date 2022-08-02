@@ -1,0 +1,66 @@
+.eventListing__header {
+    background-color: white;
+    padding: 30px;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    right: 0;
+    left: 0;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, .1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.eventListing__header img {
+    max-width: 150px;
+}
+
+.eventListing__sign-in,
+.eventListing__basket {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    text-indent: -10000px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+.eventListing__sign-in {
+    margin-right: 40px;
+}
+
+
+.eventListing__sign-in::before,
+.eventListing__basket::before {
+    content: '';
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    transform: translateX(-120%);
+}
+
+.eventListing__basket::before {
+    background-image: url('../../../public/basket-icon.jpg');
+}
+
+.eventListing__sign-in::before {
+    background-image: url('../../../public/user-icon.jpg');
+}
+
+@media screen and (min-width: 767px) {
+    .eventListing__header img {
+        max-width: 230px;
+    }
+
+    .eventListing__sign-in,
+    .eventListing__basket {
+        text-indent: 0;
+    }
+}

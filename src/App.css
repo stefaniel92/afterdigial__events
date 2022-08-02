@@ -7,3 +7,7 @@ body {
   max-width: 1190px;
   padding: 100px 30px 100px 30px;
 }
+
+.eventListing__container h2 {
+  font-size: 2rem;
+}
